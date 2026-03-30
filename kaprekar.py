@@ -18,14 +18,17 @@ def kaprekar(number: str) -> None:
     print(f"To achieve Kaprekar's Constant from number: {number}. You need to do: {steps} steps")
 
 user_input = input("Enter a number: ")
-if len(user_input) == 4 and user_input.isdigit():
-    if len(set(user_input)) > 1:
-        if user_input[0] != "0":
-            kaprekar(user_input)
+if user_input.isdigit():
+    if len(user_input) == 4:
+        if len(set(user_input)) > 1:
+            if user_input[0] != "0":
+                kaprekar(user_input)
+            else:
+                print("A number cannot start with zero")
         else:
-            print("A number cannot start with zero")
+            print("Number must have at least two different digits")
     else:
-        print("Number must have at least two different digits")
+        print("Number must be 4 digits long")
 else:
-    print("Number must be 4 digits long")
+    print("Input must be a number")
     
